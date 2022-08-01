@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/ac7ba9ef24.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather App</title>
+  </head>
+  <body class="fullpage">
+    <div class="container">
+      <div class="search-and-buttons">
+        <form id="cityForm">
+          <input
+            type="text"
+            placeholder="Enter City"
+            autofocus
+            class="search-bar"
+            id="enterCity"
+          />
+          <button type="button" class="btn btn-primary searchbutton">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <button id="geo" type="button" class="btn btn-outline-secondary">
+            Use Current Location
+          </button>
+        </form>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="d-flex flex-column bd-highlight mb-3 searchresults">
+            <div id="today" class="p-2 bd-highlight"><em>Today</em></div>
+            <div id="userCity" class="p-2 bd-highlight city">
+              <span id="cityName"> London </span>
+              <span id="temp"> 24</span>°
+              <br />
+              <a href="#" id="celsius"> C</a> /
+              <a href="#" id="fan"> F</a>
+            </div>
+            <div class="p-2 bd-highlight temp">
+              Highs: <span id="high">26</span>°C
+            </div>
+            <div class="p-2 bd-highlight temp">
+              Lows: <span id="low">18</span>°C
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card image">
+            <img src="images/sunny.svg" class="card-img-top" alt="sun-icon" />
+          </div>
+        </div>
+      </div>
+      <ul class="todays-info">
+        <li>Feels like : <span id="feels">26</span>°C</li>
+        <li>Humidity : <span id="hum">40</span>%</li>
+        <li>Wind Speed : <span id="speed" 3></span> mph</li>
+      </ul>
+      <p class="tip">Tip of the day: Don't forget your shades! 😎</p>
+      <div class="row">
+        <div class="col-sm">
+          <div class="card other-days">
+            <h5 class="card-title">Monday</h5>
+            <img
+              src="images/thunderstorms-day.svg"
+              class="card-img-top"
+              alt="thunder"
+            />
+            <div class="card-body">
+              <p class="card-text">Thunderstorms</p>
+              <p>
+                Highs: 22°C <br />
+                Lows: 16°C
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card other-days">
+            <h5 class="card-title">Tuesday</h5>
+            <img src="images/cloudy.svg" class="card-img-top" alt="clouds" />
+            <div class="card-body">
+              <p class="card-text">Cloudy</p>
+              <p>
+                Highs: 18°C <br />
+                Lows: 12°C
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card other-days">
+            <h5 class="card-title">Wednesday</h5>
+            <img
+              src="images/partlycloudy.svg"
+              class="card-img-top"
+              alt="part-clouds"
+            />
+            <div class="card-body">
+              <p class="card-text">Partly Cloudy</p>
+              <p>
+                Highs: 20°C <br />
+                Lows: 14°C
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card other-days">
+            <h5 class="card-title">Thursday</h5>
+            <img src="images/rain.svg" class="card-img-top" alt="rain" />
+            <div class="card-body">
+              <p class="card-text">Raining</p>
+              <p>
+                Highs: 17°C <br />
+                Lows: 10°C
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="card other-days">
+            <h5 class="card-title">Friday</h5>
+            <img src="images/sunny.svg" class="card-img-top" alt="sun-icon" />
+            <div class="card-body">
+              <p class="card-text">Sunny</p>
+              <p>
+                Highs: 20°C <br />
+                Lows: 16°C
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer>Coded by Shabana Patel</footer>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
